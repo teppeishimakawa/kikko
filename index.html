@@ -125,16 +125,22 @@
 
 .btn
 {
+      display:inline-block;
+   background-color: #008b8b;   /* 背景色指定 */
+   color: #ffffff;
+   font-family:arial, sans-serif;
+   font-size:20px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  95vh;
 
-   position: absolute;          /* 位置指定 */
-   padding: 10px;               /* 余白指定 */
-   top:  95vh;                     /* 位置指定 */
-                  /* 位置指定 */
-   left:  0;                    /* 位置指定 */
-   right:  0;                   /* 位置指定 */
-   margin:  auto;               /* 中央寄せ */
-   width:  200px;               /* 幅指定 */
-   height: 250px;                /* 高さ指定 */
+   left:  0;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  100px;
+   height: 30px;              /* 高さ指定 */
 }
 
 
@@ -233,7 +239,7 @@
 </div>
 </div>
 
-<input type="button" id="btn0" class="btn" onclick="first()">
+<input type="button" id="btn0" class="btn" onclick="first()" value="start">
 
 </form>
 
