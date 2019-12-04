@@ -4,7 +4,92 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
-#alive
+
+#fall {
+  animation-name: fall;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+@keyframes fall {
+  from {
+    opacity: 0;
+    transform: translateY(-50vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+}
+
+
+#fall2 {
+  animation-name: fall;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+
+
+
+#mini {
+  animation-name: mini;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+
+@keyframes mini {
+  from {
+    transform: translate(0px,0px) scale(1,1);
+  }
+  to {
+    transform: translate(-40vw,60vh) scale(0.5,0.5);
+  }
+}
+
+#mini2 {
+  animation-name: mini;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+
+
+#slide {
+  animation-name: slide;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0vh);
+  }
+  to {
+    transform: translateX(25vh);
+  }
+}
+
+
+
+
+.left
 {
    background-color: #008b8b;   /* 背景色指定 */
    color: #ffffff;
@@ -12,39 +97,145 @@
    font-weight: bold;
    position: absolute;          /* 位置指定 */
    padding: 20px;               /* 余白指定 */
-   top:  0;                     /* 位置指定 */
-   bottom:  0;                  /* 位置指定 */
+   top:  10;                     /* 位置指定 */
+                  /* 位置指定 */
    left:  0;                    /* 位置指定 */
-   right:  0;                   /* 位置指定 */
+   right:  1;                   /* 位置指定 */
    margin:  auto;               /* 中央寄せ */
    text-align:center;
    width:  50px;               /* 幅指定 */
-   height: 20px;                /* 高さ指定 */
-
-   opacity: 1;
-   animation: fade 4s linear;
-   animation-iteration-count: infinite;
+   height: 15px;                /* 高さ指定 */
 }
 
-@keyframes fade {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
+
+.pic
+{
+    display:inline-block;
+   color: #ffffff;
+   position: absolute;          /* 位置指定 */
+   padding: 100px;               /* 余白指定 */
+   top:  0;                     /* 位置指定 */
+                  /* 位置指定 */
+   left:  0;                    /* 位置指定 */
+   right:  0;                   /* 位置指定 */
+   margin:  auto;               /* 中央寄せ */
+   width:  200px;               /* 幅指定 */
+   height: 250px;                /* 高さ指定 */
 }
+
+.btn
+{
+
+   position: absolute;          /* 位置指定 */
+   padding: 10px;               /* 余白指定 */
+   top:  95vh;                     /* 位置指定 */
+                  /* 位置指定 */
+   left:  0;                    /* 位置指定 */
+   right:  0;                   /* 位置指定 */
+   margin:  auto;               /* 中央寄せ */
+   width:  200px;               /* 幅指定 */
+   height: 250px;                /* 高さ指定 */
+}
+
+
+.btnBuy
+{
+      display:inline-block;
+   background-color: #008b8b;   /* 背景色指定 */
+   color: #ffffff;
+   font-family:arial, sans-serif;
+   font-size:20px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  60vh;
+
+   left:  0;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  100px;
+   height: 50px;
+}
+
+
+.num
+{
+      display:inline-block;
+
+   font-family:arial, sans-serif;
+   font-size:30px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  50vh;
+
+   left:  10vw;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  80px;
+   height: 40px;
+}
+
+
+.label
+{
+      display:inline-block;
+
+   font-family:arial, sans-serif;
+   font-size:30px;
+   font-weight: bold;
+   position: absolute;
+   padding: 0px;
+   top:  50.5vh;
+   left:  -15vw;
+   right:  0;
+   margin:  auto;
+   text-align:center;
+   width:  100px;
+   height: 40px;
+}
+
+
+
 
 </style>
 
- <title>fps</title>
+ <title>kikko</title>
 </head>
 
 <body>
-<div id="alive" >TX...</div>
-<input type="button" onclick="stt()" id="stt" value="start">
-<input type="button" onclick="stp()" id="stp" value="stop">
-<canvas id="buffer"></canvas>
-<video muted playsinline id="video"></video>
-<img id="image" >
+<div class="left" >table_1</div>
 
-<script type="text/javascript" src="./fps.js"></script>
+<form action="/kikkonode.js" method="post" >
+
+<div id="slide">
+<div id="mini">
+<div id="fall">
+<img class="pic" id="syoyu1" src="./img/syoyu1.png"></img>
+<label for="numid" class="label">num:</label>
+<input type="number" id="numid" class="num" name="num1"  min="0" max="10" value="" >
+<button type="submit" id="btn2" class="btnBuy" value="item1" onclick="syoyu1()">buy!</button>
+</div>
+</div>
+</div>
+
+
+<div id="mini2">
+<div id="fall2">
+<img class="pic" id="syoyu2" src="./img/syoyu2.png"></img>
+<button type="submit" id="btn3" class="btnBuy" value="item2" onclick="syoyu2()">buy!</button>
+<label for="numid2" class="label">num:</label>
+<input type="number" id="numid2" class="num" name="num2"  min="0" max="10" value="" >
+</div>
+</div>
+
+<input type="button" id="btn1" class="btn" value="start" onclick="first()">
+
+</form>
+
+<script type="text/javascript" src="./kikko.js"></script>
 
 </body>
 </html>
