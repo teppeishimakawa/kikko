@@ -208,15 +208,15 @@
 <body>
 <div class="left" >table_1</div>
 
-<form action="/kikkonode.js" method="post" >
+<form action="https://teppeishimakawa-kikko.glitch.me" method="post" enctype="multipart/form-data" target="send">
 
 <div id="slide">
 <div id="mini">
 <div id="fall">
-<img class="pic" id="syoyu1" src="./img/syoyu1.png"></img>
+<img class="pic" id="syoyu1" src="./img/syoyu1.png">
 <label for="numid" class="label">num:</label>
 <input type="number" id="numid" class="num" name="num1"  min="0" max="10" value="" >
-<button type="submit" id="btn2" class="btnBuy" value="item1" onclick="syoyu1()">buy!</button>
+<button type="submit" id="btn1" class="btnBuy" name="btn1" value="table1">buy!</button>
 </div>
 </div>
 </div>
@@ -224,16 +224,19 @@
 
 <div id="mini2">
 <div id="fall2">
-<img class="pic" id="syoyu2" src="./img/syoyu2.png"></img>
-<button type="submit" id="btn3" class="btnBuy" value="item2" onclick="syoyu2()">buy!</button>
+<img class="pic" id="syoyu2" src="./img/syoyu2.png">
 <label for="numid2" class="label">num:</label>
 <input type="number" id="numid2" class="num" name="num2"  min="0" max="10" value="" >
+<button type="submit" id="btn2" name="btn1" class="btnBuy" value="table1">buy!</button>
 </div>
 </div>
 
-<input type="button" id="btn1" class="btn" value="start" onclick="first()">
+<input type="button" id="btn0" class="btn" onclick="first()">
 
 </form>
+
+<!--form送信後遷移させないためのダミー-->
+<iframe name="send" style="width:0px;height:0px;border:0px;"></iframe>
 
 <script type="text/javascript" src="./kikko.js"></script>
 
