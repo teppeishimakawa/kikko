@@ -9,7 +9,9 @@ var flg;
 
 
 
-http.createServer(function(req, res) {
+
+
+var server=http.createServer(function(req, res) {
   
   
     var url = req.url;
@@ -102,7 +104,7 @@ http.createServer(function(req, res) {
           fs.readFile("./kikko.js", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/plain"});
-      if(flg == 1){res.write(data.replace("var flg;","first()"));}else
+      if(flg == 1){res.write(data.replace("//first();","first()"));}else
        {
       res.write(data);
        }   
@@ -196,9 +198,29 @@ http.createServer(function(req, res) {
         res.end("./index2.html",data.replace("<script></script>","<p>aaaaaaa</p>"));             
         });
   */
-  
   })
-  .listen(8080);
+
+  server.listen(8080);
 
 
 
+var socketio = require('socket.io');
+var io = socketio.listen(server);
+io.sockets.on('connection', function(socket) 
+{
+    socket.on('client_to_server', function(data) {
+    	//on:受信、emit:送信
+        console.log(data);
+        io.sockets.emit('server_to_client',"receive!!");
+    });
+});
+
+/*
+const server = require('http').createServer();
+const io = require('socket.io')(server);
+io.on('connection', client => {
+  client.on('event', data => { });
+  client.on('disconnect', () => { });
+});
+server.listen(3000);
+*/

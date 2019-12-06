@@ -5,7 +5,7 @@
     <title>sample</title>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <h1>K project control sys</h1>
     <label for="line1">table:</label>
     <input type="text" id="line1">
     <br>
@@ -18,11 +18,24 @@
     <br>
     <a href="/index.html">index</a>
     <button id="sttbtn">start</button>
+    <button id="stpbtn">stop</button>
     <script>
     document.getElementById("sttbtn").onclick=function()
     {
     var json = {};
     json.flg = "1";
+    var request = new XMLHttpRequest();
+    var jsonText = JSON.stringify(json); // ここで、dataをJSON文字列に変換
+    request.open("POST", "https://teppeishimakawa-kikko.glitch.me");
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(jsonText);
+
+    }
+      
+        document.getElementById("stpbtn").onclick=function()
+    {
+    var json = {};
+    json.flg = "0";
     var request = new XMLHttpRequest();
     var jsonText = JSON.stringify(json); // ここで、dataをJSON文字列に変換
     request.open("POST", "https://teppeishimakawa-kikko.glitch.me");
