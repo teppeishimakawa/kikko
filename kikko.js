@@ -1,5 +1,9 @@
+
+var status = localStorage.getItem('status');
+document.getElementById("btnc").onclick=localStorage.removeItem('status');
+console.log(status);
+
 //first();
-//if(flg == 1)
 function first()
 {
   setTimeout(function()
@@ -34,7 +38,17 @@ var socket = io.connect();
 setInterval(function()
 {
 socket.emit("client_to_server", "poling");
-socket.on("server_to_client", function(data){console.log(data)});
+socket.on("server_to_client", function(data)
+  {
+    console.log("socketOn" + data)
+    console.log(status);
+    if((data == "1") && (status == "null"))
+    {
+    localStorage.setItem('status', '1');
+    location.reload();
+    }else if(data == "1" && status == "1"){socket.close(); console.log("socketClose")}
+  });
+
 },5000);
 
 

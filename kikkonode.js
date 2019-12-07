@@ -5,7 +5,7 @@ var fs = require("fs");
 var term1;
 var term2;
 var term3;
-var flg;
+var flg=0;
 
 
 
@@ -174,7 +174,7 @@ var server=http.createServer(function(req, res) {
      
 
   
-  //制御pcからのstart信号
+  //制御pcからのstart信号,start:flg 1,stop:flg 0
       if (req.headers["content-type"] == "application/json") 
     {
           req.setEncoding("utf-8");
@@ -203,15 +203,16 @@ var server=http.createServer(function(req, res) {
   server.listen(8080);
 
 
-
+//poling
 var socketio = require('socket.io');
 var io = socketio.listen(server);
 io.sockets.on('connection', function(socket) 
 {
     socket.on('client_to_server', function(data) {
     	//on:受信、emit:送信
+      //サーバログに受信データ表示
         console.log(data);
-        io.sockets.emit('server_to_client',"receive!!");
+        io.sockets.emit('server_to_client',flg);
     });
 });
 
