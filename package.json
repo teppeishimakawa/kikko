@@ -1,0 +1,23 @@
+{
+  "name": "kikko",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kikko.js",
+  "scripts": {
+    "start": "node kikkonode.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teppeishimakawa/kikko.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teppeishimakawa/kikko/issues"
+  },
+  "homepage": "https://github.com/teppeishimakawa/kikko#readme",
+  "dependencies": {
+    "multiparty": "^4.2.1",
+    "socketio": "^1.0.0"
+  }
+}
