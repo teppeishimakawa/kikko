@@ -235,8 +235,8 @@
 <img class="parent" src="./img/KLK_03.png">
   <img class="child" src="./img/buy1.png">
   <img class="child" src="./img/buy2.png">
-  <img class="child" src="./img/next.png">
-  <img class="child" src="./img/return.png">
+  <img class="child" id="next" src="./img/next.png">
+  <img class="child" id="return" src="./img/return.png">
   <img class="child" src="./img/sina1.png">
 <!--img class="child" id="return" src="./img/buy1.png"-->
 </div>
@@ -268,6 +268,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script type="text/javascript" src="./kikko.js"></script>
+<script>
+document.getElementById("return").onclick = function()
+{
+location.href='./index_page2_bunsyo.html'
+};
+document.getElementById("next").onclick = function()
+{
+location.href='./index4.html'
+};
 
+</script>
 </body>
 </html>
