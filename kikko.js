@@ -1,4 +1,5 @@
-
+var flg;
+//if(flg == 1)
 function first()
 {
   setTimeout(function()

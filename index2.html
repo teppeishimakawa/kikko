@@ -2,10 +2,9 @@
 <html lang="ja" >
   <head>
     <meta charset="utf-8">
-    <title>sample</title>
+    <title>kikko cont</title>
   </head>
   <body>
-    <h1>Hello world</h1>
     <label for="line1">table:</label>
     <input type="text" id="line1">
     <br>
@@ -14,5 +13,23 @@
     <br>
     <label for="line3">syoyu2:</label>
     <input type="text" id="line3">
+    <br>
+    <br>
+    <a href="/index.html">index</a>
+    <button id="sttbtn">start</button>
+    <script>
+    document.getElementById("sttbtn").onclick=function()
+    {
+    var json = {};
+    json.flg = "1";
+    var request = new XMLHttpRequest();
+    var jsonText = JSON.stringify(json); // ここで、dataをJSON文字列に変換
+    request.open("POST", "https://teppeishimakawa-kikko.glitch.me");
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(jsonText);
+
+    }
+    </script>
+    <script></script>
   </body>
 </html>

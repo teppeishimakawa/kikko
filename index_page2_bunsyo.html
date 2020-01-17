@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-sca​<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<style>
+.resizeimage img { width: 100%; }
+
+.parent {/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.child {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  top: -20px;
+  left: 0;
+  }
+</style>
+
+ <title>kikko2</title>
+</head>
+
+<body>
+
+<div class="resizeimage">
+<img class="parent" src="./img/KLK_02.png">
+<img class="child" id="return" src="./img/return.png">
+</div>
+<script>
+document.getElementById("return").onclick = function()
+{
+location.href='./index.html'
+};
+</script>
+
+</body>
+</html>
