@@ -196,20 +196,6 @@ var server=http.createServer(function(req, res) {
        }
       res.end();
          });
-      }else if("/img/syoyu2.png" == url)
-      {
-          fs.readFile("./img/syoyu2.png", function (err, data)
-         {
-          res.writeHead(200, {"Content-Type": "image/png"});
-          res.end(data);
-         });
-      }else if("/img/syoyu1.png" == url)
-      { 
-          fs.readFile("./img/syoyu1.png", function (err, data)
-         {
-          res.writeHead(200, {"Content-Type": "image/png"});
-          res.end(data);
-         }); 
       }else if("/img/KLK_03.png" == url)
       { 
           fs.readFile("./img/KLK_03.png", function (err, data)
@@ -234,6 +220,20 @@ var server=http.createServer(function(req, res) {
       }else if("/img/sina1.png" == url)
       { 
           fs.readFile("./img/sina1.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/next.png" == url)
+      { 
+          fs.readFile("./img/next.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/return.png" == url)
+      { 
+          fs.readFile("./img/return.png", function (err, data)
          {
           res.writeHead(200, {"Content-Type": "image/png"});
           res.end(data);
