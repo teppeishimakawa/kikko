@@ -2,12 +2,24 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-sca​<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
+
+
+.resizeimage img { width: 100%; }
+
+.parent {/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.child {
+  position: absolute;/*絶対配置*/
+  top: 0;
+  left: 0;
+  }
+
+
+
 
 #fall {
   animation-name: fall;
@@ -210,46 +222,59 @@
 
 
 
+
 </style>
 
  <title>kikko</title>
 </head>
 
 <body>
-<div class="left" >table_1</div>
+
+<div class="resizeimage">
+  <!--input type="image" src="./img/buy1.png" id="btn1" class="child" class="btnBuy" name="btnn1" alt="tx"-->
+  <img class="child" id="btn" src="./img/next.png">
+<img class="parent" src="./img/KLK_03.png">
+<!--img class="child" id="return" src="./img/buy1.png"-->
+
+
+
+<div class="left" style="display:none">table_1</div>
 
 <form action="https://teppeishimakawa-kikko.glitch.me" method="post" enctype="multipart/form-data" target="send">
 
 <div id="slide">
 <div id="mini">
 <div id="fall">
-<img class="pic" id="syoyu1" src="./img/syoyu1.png">
+
+<img class="pic" id="sina1" src="./img/sina.png">
 <label for="numid" class="label">num:</label>
-<input type="number" id="numid" class="num" name="num1"  min="0" max="10" value="" >
 <!--ここがテーブルナンバー-->
-<button type="submit" id="btn1" class="btnBuy" name="btnn1" value="No.1">buy!</button>
+<input type="number" id="numid" class="num" name="num1"  min="0" max="10" value="No.1" >
+
+
+</div>
 </div>
 </div>
 </div>
 
-
-<div id="mini2">
+<!--div id="mini2">
 <div id="fall2">
 <img class="pic" id="syoyu2" src="./img/syoyu2.png">
 <label for="numid2" class="label">num:</label>
-<input type="number" id="numid2" class="num" name="num2"  min="0" max="10" value="" >
+<input type="number" id="numid2" class="num" name="num2"  min="0" max="10" value="" -->
 <!--ここがテーブルナンバー-->
 <button type="submit" id="btn2" name="btnn1" class="btnBuy" value="No.1">buy!</button>
 </div>
 </div>
 
-<input type="button" id="btn0" class="btn" onclick="first()" value="start">
+<input type="button" id="btn0" class="btn" onclick="first()" value="start" style="display:none">
 
 </form>
 
 <!--form送信後遷移させないためのダミー-->
 <iframe name="send" style="width:0px;height:0px;border:0px;"></iframe>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script type="text/javascript" src="./kikko.js"></script>
 
 </body>

@@ -9,7 +9,7 @@ var flg;
 
 
 
-http.createServer(function(req, res) {
+var server=http.createServer(function(req, res) {
 
 
     var url = req.url;
@@ -68,7 +68,8 @@ http.createServer(function(req, res) {
    //html2
     if ("/" == url && req.method === "GET")
     {
-      fs.readFile("./index2.html", "utf-8", function(err, data) {
+      fs.readFile("./index2.html", "utf-8", function(err, data)
+      {
         if (err) {
           res.end("invalid request " + err.message, 400);
           return;
@@ -125,13 +126,12 @@ http.createServer(function(req, res) {
          {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
+
       res.end();
          });
+      }
       //html
-      }if(flg == 1){res.write(data.replace("src=./index_page2_bunsyo.html","src=./index3.html"));}else
-       {
-      res.write(data);
-       }
+
 
 
 
@@ -173,7 +173,7 @@ http.createServer(function(req, res) {
      //html_page2.html
       if("/index3.html" == url)
       {
-          fs.readFile("./index_page2.html", "UTF-8", function (err, data)
+          fs.readFile("./index3.html", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.write(data);
@@ -185,7 +185,7 @@ http.createServer(function(req, res) {
           fs.readFile("./kikko.js", "UTF-8", function (err, data)
          {
       res.writeHead(200, {"Content-Type": "text/plain"});
-      if(flg == 1){res.write(data.replace("vasr flg;","first()"));}else
+      if(flg == 1){res.write(data.replace("var flg;","first()"));}else
        {
       res.write(data);
        }
@@ -283,3 +283,16 @@ http.createServer(function(req, res) {
 
 
 
+//poling
+//clientに向けてstart:flg 1,stop:flg 0送信
+var socketio = require('socket.io');
+var io = socketio.listen(server);
+io.sockets.on('connection', function(socket)
+{
+    socket.on('client_to_server', function(data) {
+      //on:受信、emit:送信
+      //サーバログに受信データ表示
+        console.log("rxdata" + data);
+        io.sockets.emit('server_to_client',flg);
+    });
+});

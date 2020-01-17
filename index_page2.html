@@ -2,10 +2,6 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-sca​<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
 <style>
 .resizeimage img { width: 100%; }
@@ -47,6 +43,31 @@ html, body {
 </iframe>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script type="text/javascript">
+
+var flgg1=0;
+
+var socket = io.connect();
+setInterval(function()
+{
+socket.emit("client_to_server", "poling");
+socket.on("server_to_client", function(data)
+  {
+    console.log("rxdata:" + data)
+    console.log(status);
+  //data:トリガ信号,flgg:再生ステータス1がstp
+    if(data == "1" && flgg1 ==0)
+    {
+
+    document.getElementById("ifm1").src="./index3.html"
+    flgg1=1;
+    //location.reload();
+    }
+  });
+
+},10000);
+</script>
 
 
 
