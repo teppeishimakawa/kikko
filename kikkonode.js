@@ -210,8 +210,35 @@ var server=http.createServer(function(req, res) {
           res.writeHead(200, {"Content-Type": "image/png"});
           res.end(data);
          }); 
+      }else if("/img/KLK_03.png" == url)
+      { 
+          fs.readFile("./img/KLK_03.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/buy1.png" == url)
+      { 
+          fs.readFile("./img/buy1.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/buy2.png" == url)
+      { 
+          fs.readFile("./img/buy2.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
+      }else if("/img/sina1.png" == url)
+      { 
+          fs.readFile("./img/sina1.png", function (err, data)
+         {
+          res.writeHead(200, {"Content-Type": "image/png"});
+          res.end(data);
+         }); 
       }
-
     /*
     if ("/" == url)
   {

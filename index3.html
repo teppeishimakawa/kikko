@@ -14,7 +14,7 @@
 
 .child {
   position: absolute;/*絶対配置*/
-  top: 0;
+  top: -20px;
   left: 0;
   }
 
@@ -232,10 +232,10 @@
 
 <div class="resizeimage">
   <!--input type="image" src="./img/buy1.png" id="btn1" class="child" class="btnBuy" name="btnn1" alt="tx"-->
-  <div id="fall">
-  <img class="child" id="btn" src="./img/next.png">
-</div>
 <img class="parent" src="./img/KLK_03.png">
+  <img class="child" src="./img/buy1.png">
+  <img class="child" src="./img/buy2.png">
+  <img class="child" src="./img/sina1.png">
 <!--img class="child" id="return" src="./img/buy1.png"-->
 </div>
 
@@ -244,7 +244,8 @@
 
 <form action="https://teppeishimakawa-kikko.glitch.me" method="post" enctype="multipart/form-data" target="send">
 
-
+<div id="fall">
+</div>
 
 
 <!--div id="mini2">
@@ -253,9 +254,8 @@
 <label for="numid2" class="label">num:</label>
 <input type="number" id="numid2" class="num" name="num2"  min="0" max="10" value="" -->
 <!--ここがテーブルナンバー-->
-<button type="submit" id="btn2" name="btnn1" class="btnBuy" value="1">buy!</button>
-</div>
-</div>
+<!--button type="submit" id="btn2" name="btnn1" class="btnBuy" value="1">buy!</button-->
+
 
 <input type="button" id="btn0" class="btn" onclick="first()" value="start" style="display:none">
 
